@@ -1,0 +1,65 @@
+name: My Awesome App
+on: push
+
+jobs:
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          sleep 5s
+          echo Build is Success
+  unit-testing:
+    strategy:
+      matrix:
+         os: [ubuntu-latest, macos-latest, windows-latest]
+         cmd: [hello, world]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Testing on -  ${{ matrix.os }}
+        run: echo  ${{ matrix.cmd }}
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://my-awesome-app.com
+    steps:
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+      - name: D1
+        run: |
+          sleep 5s
+          echo Build is Success
+
+        
