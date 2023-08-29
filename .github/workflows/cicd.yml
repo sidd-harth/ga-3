@@ -11,15 +11,17 @@ jobs:
           sleep 5s
           echo Build is Success
   unit-testing:
+    needs: build
     strategy:
       matrix:
          os: [ubuntu-latest, macos-latest, windows-latest]
-         cmd: [hello, world]
+         cmd: [testing...]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Testing on -  ${{ matrix.os }}
         run: echo  ${{ matrix.cmd }}
   deploy:
+    needs: unit-testing
     runs-on: ubuntu-latest
     environment:
       name: production
