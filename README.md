@@ -1,1 +1,3 @@
-# ga-3
+# My Awesom App
+
+Explorint GitHub Actions
