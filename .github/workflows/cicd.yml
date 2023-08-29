@@ -23,6 +23,7 @@ jobs:
   code-coverage:
     name: Code Coverage
     runs-on: ubuntu-latest
+    needs: [unit-testing, build]
     steps:
       - name: Build
         run: |
