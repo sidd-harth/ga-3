@@ -20,9 +20,17 @@ jobs:
     steps:
       - name: Testing on -  ${{ matrix.os }}
         run: echo  ${{ matrix.cmd }}
+  code-coverage:
+    name: Code Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          sleep 5s
+          echo Build is Success
   deploy:
-    name: Deploy to Staging
-    needs: unit-testing
+    name: Deploy to Production
+    needs: [unit-testing, code-coverage]
     runs-on: ubuntu-latest
     environment:
       name: production
