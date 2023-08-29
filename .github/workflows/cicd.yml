@@ -11,6 +11,7 @@ jobs:
           sleep 5s
           echo Build is Success
   unit-testing:
+    name: Unit Testing
     needs: build
     strategy:
       matrix:
@@ -21,6 +22,7 @@ jobs:
       - name: Testing on -  ${{ matrix.os }}
         run: echo  ${{ matrix.cmd }}
   deploy:
+    name: Deploy to Staging
     needs: unit-testing
     runs-on: ubuntu-latest
     environment:
@@ -29,39 +31,30 @@ jobs:
     steps:
       - name: D1
         run: |
-          sleep 5s
+          sleep 1s
           echo Build is Success
-      - name: D1
+      - name: D2
         run: |
-          sleep 5s
+          sleep 1s
           echo Build is Success
-      - name: D1
+      - name: D3
         run: |
-          sleep 5s
+          sleep 1s
           echo Build is Success
-      - name: D1
+      - name: D4
         run: |
-          sleep 5s
+          sleep 1s
           echo Build is Success
-      - name: D1
+      - name: D5
         run: |
-          sleep 5s
+          sleep 1s
           echo Build is Success
-      - name: D1
+      - name: D6
         run: |
-          sleep 5s
+          sleep 1s
           echo Build is Success
-      - name: D1
+      - name: D7
         run: |
-          sleep 5s
+          sleep 1s
           echo Build is Success
-      - name: D1
-        run: |
-          sleep 5s
-          echo Build is Success
-      - name: D1
-        run: |
-          sleep 5s
-          echo Build is Success
-
         
