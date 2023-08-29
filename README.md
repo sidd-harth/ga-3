@@ -1,3 +1,3 @@
 # My Awesom App
 
-Explorint GitHub Actions
+Exploring GitHub Actions
