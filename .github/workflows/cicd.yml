@@ -9,9 +9,17 @@ jobs:
         run: |
           sleep 5s
           echo Build is Success
+  dependency-scan:
+    name: Dependency Scanning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          sleep 5s
+          echo Build is Success
   unit-testing:
     name: Unit Testing
-    needs: build
+    needs: [build, dependency-scan]
     strategy:
       matrix:
          os: [ubuntu-latest, macos-latest, windows-latest]
