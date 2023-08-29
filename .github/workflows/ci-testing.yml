@@ -1,0 +1,83 @@
+name: My Awesome App
+on: push
+jobs:
+  unit-testing:
+    name: Unit Testing
+    strategy:
+      matrix:
+         os: [ubuntu-latest, macos-latest, windows-latest]
+         cmd: [test]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        run: echo Code Checkout
+      - name: Install NodeJS -  ${{ matrix.os }}
+        run: echo Installing NodeJS
+      - name: Run Tests
+        run: echo npm ${{ matrix.cmd }}
+
+
+
+  # build:
+  #   name: Build Application
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Build
+  #       run: |
+  #         sleep 5s
+  #         echo Build is Success
+  # # dependency-scan:
+  # #   name: Dependency Scanning
+  # #   runs-on: ubuntu-latest
+  # #   steps:
+  # #     - name: Build
+  # #       run: |
+  # #         sleep 5s
+  # #         echo Build is Success
+
+  # code-coverage:
+  #   name: Code Coverage
+  #   runs-on: ubuntu-latest
+  #   needs: [unit-testing]
+  #   steps:
+  #     - name: Build
+  #       run: |
+  #         sleep 5s
+  #         echo Build is Success
+  # deploy:
+  #   name: Deploy to Production
+  #   needs: [unit-testing, code-coverage]
+  #   runs-on: ubuntu-latest
+  #   environment:
+  #     name: production
+  #     url: https://my-awesome-app.com
+  #   steps:
+  #     - name: D1
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
+  #     - name: D2
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
+  #     - name: D3
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
+  #     - name: D4
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
+  #     - name: D5
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
+  #     - name: D6
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
+  #     - name: D7
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
+        
