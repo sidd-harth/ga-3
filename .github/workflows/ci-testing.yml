@@ -6,7 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+
+steps:
+  - uses: actions/checkout@v3.6.0
+
+steps:
+  - uses: actions/checkout@main
+
+steps:
+  - uses: actions/checkout@a824008085750b8e136effc585c3cd6082bd575f
       
       - name: Install NodeJS
         uses: actions/setup-node@v3
