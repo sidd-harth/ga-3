@@ -2,14 +2,19 @@ on: push
 
 jobs:
   set-environment-variables:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os: ['windows-latest','ubuntu-latest']
+    runs-on: ${{ matrix.os }}
     steps:
-    # - name: Set Variable on Ubuntu
-    #   run: |
-    #     export name=Siddharth
-    #     echo $name
+    - name: Set Variable on ${{ matrix.os }}
+      if: runner.os == 'Linux'
+      run: |
+        export name=Siddharth
+        echo $name
         
-    - name: Set Variable on Windows
+    - name: Set Variable on ${{ matrix.os }}
+      if: runner.os == 'Windows'
       run: |
         Set-Variable -Name "name" -Value "KodeKloud"
         echo $name
