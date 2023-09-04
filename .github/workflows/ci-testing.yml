@@ -2,7 +2,6 @@ name: My Awesome App
 on: push
 jobs:
   unit-testing:
-    name: Unit Testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,8 +17,6 @@ steps:
       
       - name: Install NodeJS
         uses: actions/setup-node@v3
-        with:
-          node-version: 20
       
       - name: Install Dependencies
         run: npm install
