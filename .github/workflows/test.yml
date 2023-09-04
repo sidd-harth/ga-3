@@ -1,0 +1,16 @@
+on: push
+
+jobs:
+  set-environment-variables:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set Variable on Ubuntu
+      run: |
+        export name=Siddharth
+        echo $name
+        
+    - name: Set Variable on Windows
+      run: |
+        Set-Variable -Name "name" -Value "KodeKloud"
+        echo $name
+        
