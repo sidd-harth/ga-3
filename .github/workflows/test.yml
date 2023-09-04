@@ -4,10 +4,10 @@ jobs:
   set-environment-variables:
     runs-on: windows-latest
     steps:
-    - name: Set Variable on Ubuntu
-      run: |
-        export name=Siddharth
-        echo $name
+    # - name: Set Variable on Ubuntu
+    #   run: |
+    #     export name=Siddharth
+    #     echo $name
         
     - name: Set Variable on Windows
       run: |
