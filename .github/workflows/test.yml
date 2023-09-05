@@ -30,10 +30,9 @@ jobs:
     - name: Upload Report to AWS S3
       run: echo "Uploading reports .. .. .. .. ."
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   continue-on-error: true
-  #   steps:
-  #   - name: Upload Report to AWS S3
-  #     run: echo "Uploading reports .. .. .. .. ."
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upload Report to AWS S3
+      run: echo "Uploading reports .. .. .. .. ."
         
