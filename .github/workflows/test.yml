@@ -1,9 +1,7 @@
 on: push
 
 jobs:
-
   testing:
-
     strategy:
       matrix:
         os: ['windows-latest','ubuntu-latest']
