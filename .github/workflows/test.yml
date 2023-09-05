@@ -21,7 +21,7 @@ jobs:
 
   reports:
     needs: set-environment-variables
-    if: failure()
+    #if: failure()
     runs-on: ubuntu-latest
     steps:
     - name: Upload Report to AWS S3
