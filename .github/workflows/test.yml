@@ -14,7 +14,7 @@ jobs:
         echo $name
         
     - name: Set Variable on Windows
-      if: runner.os == 'Windows'
+    #  if: runner.os == 'Windows'
       run: |
         Set-Variable -Name "name" -Value "KodeKloud"
         echo $name
