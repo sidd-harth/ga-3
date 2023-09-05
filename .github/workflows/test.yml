@@ -20,6 +20,7 @@ jobs:
         echo $name
 
   reports:
+    needs: set-environment-variables
     if: failure()
     runs-on: ubuntu-latest
     steps:
