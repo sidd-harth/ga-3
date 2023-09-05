@@ -10,14 +10,14 @@ jobs:
     - name: Set Variable on Ubuntu
       if: runner.os == 'Linux'
       run: |
-        export apikey=$3cuR3-t0k3N-1234567890
+        export apikey=$3cuR3-t0k3N
         echo $name
         echo "Running Tests ........."
         
     - name: Set Variable on Windows
       if: runner.os == 'Windows'
       run: |
-        Set-Variable -Name "apikey" -Value "$3cuR3-t0k3N-1234567890"
+        Set-Variable -Name "apikey" -Value "$3cuR3-t0k3N"
         echo $name
         echo "Running Tests ........."
 
