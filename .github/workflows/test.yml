@@ -24,7 +24,6 @@ jobs:
   reports:
     needs: testing
     runs-on: ubuntu-latest
-  #  if: failure() || success()
     continue-on-error: true
     steps:
     - name: Upload Report to AWS S3
