@@ -10,14 +10,14 @@ jobs:
     - name: Set Variable on Ubuntu
       if: runner.os == 'Linux'
       run: |
-        export name=Siddharth
+        export apikey=$3cuR3-t0k3N-1234567890
         echo $name
         echo "Running Tests ........."
         
     - name: Set Variable on Windows
       if: runner.os == 'Windows'
       run: |
-        Set-Variable -Name "name" -Value "KodeKloud"
+        Set-Variable -Name "apikey" -Value "$3cuR3-t0k3N-1234567890"
         echo $name
         echo "Running Tests ........."
 
@@ -25,6 +25,14 @@ jobs:
     needs: testing
     if: failure() || success()
     runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+    - name: Upload Report to AWS S3
+      run: echo "Uploading reports .. .. .. .. ."
+
+  deploy:
+    runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
     - name: Upload Report to AWS S3
       run: echo "Uploading reports .. .. .. .. ."
