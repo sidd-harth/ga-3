@@ -1,7 +1,7 @@
 on: push
 
 jobs:
-  set-environment-variables:
+  testing:
     strategy:
       matrix:
         os: ['windows-latest','ubuntu-latest']
@@ -12,16 +12,18 @@ jobs:
       run: |
         export name=Siddharth
         echo $name
+        echo "Running Tests ........."
         
     - name: Set Variable on Windows
-    #  if: runner.os == 'Windows'
+      if: runner.os == 'Windows'
       run: |
         Set-Variable -Name "name" -Value "KodeKloud"
         echo $name
+        echo "Running Tests ........."
 
   reports:
-    needs: set-environment-variables
-    #if: failure()
+    needs: testing
+    if: failure() || success()
     runs-on: ubuntu-latest
     steps:
     - name: Upload Report to AWS S3
