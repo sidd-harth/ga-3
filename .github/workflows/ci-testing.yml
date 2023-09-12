@@ -82,20 +82,20 @@ jobs:
           echo Build is Success
       - name: D7
         run: |
-          sleep 1s
+          sleep 10s
           echo Build is Success
-  dev-test:
-    name: DEV Integration Test
-    needs: [dev-deploy]
-    runs-on: ubuntu-latest
-    environment:
-      name: development
-      url: https://my-awesome-app.com
-    steps:
-      - name: D1
-        run: |
-          sleep 1s
-          echo Build is Success
+  # dev-test:
+  #   name: DEV Integration Test
+  #   needs: [dev-deploy]
+  #   runs-on: ubuntu-latest
+  #   environment:
+  #     name: development
+  #     url: https://my-awesome-app.com
+  #   steps:
+  #     - name: D1
+  #       run: |
+  #         sleep 1s
+  #         echo Build is Success
           
   prod-deploy:
     name: Deploy to PROD Env
@@ -119,7 +119,7 @@ jobs:
           echo Build is Success
       - name: D4
         run: |
-          sleep 1s
+          sleep 100s
           echo Build is Success
       - name: D5
         run: |
