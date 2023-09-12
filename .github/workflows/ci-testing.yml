@@ -16,18 +16,9 @@ jobs:
       name: development
     steps:
       - name: D1
-
       - name: D2
-
       - name: D3
-
-      - name: D4
-
-      - name: D5
-
-      - name: D6
-
-      - name: D7       
+      - name: D4  
   prod-deploy:
     needs: [dev-deploy]
     runs-on: ubuntu-latest
@@ -35,18 +26,9 @@ jobs:
       name: production
     steps:
       - name: D1
-
       - name: D2
-
       - name: D3
-
       - name: D4
-
-      - name: D5
-
-      - name: D6
-
-      - name: D7
         
 
   # unit-testing:
