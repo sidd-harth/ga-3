@@ -29,6 +29,7 @@ jobs:
           
   dependency-scan:
     name: Dependency Scanning
+    needs: [code-coverage]
     runs-on: ubuntu-latest
     steps:
       - name: Build
@@ -48,8 +49,8 @@ jobs:
 
 
   dev-deploy:
-    name: Deploy to Dev env
-    needs: [dependency-scan]
+    name: Deploy to Dev Env
+    needs: [build]
     runs-on: ubuntu-latest
     environment:
       name: development
@@ -84,6 +85,7 @@ jobs:
           sleep 1s
           echo Build is Success
   dev-test:
+    name: Dev Integration Test
     needs: [dev-deploy]
     runs-on: ubuntu-latest
     environment:
@@ -96,7 +98,7 @@ jobs:
           echo Build is Success
           
   prod-deploy:
-    name: Deploy to Prod env
+    name: Deploy to Prod Env
     needs: [dev-test]
     runs-on: ubuntu-latest
     environment:
