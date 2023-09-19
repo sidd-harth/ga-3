@@ -14,19 +14,19 @@ jobs:
     - run: echo code
   docker:
     needs: code
-    if: github.ref == 'refs/heads/feature/*'
+    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
     - run: echo code
   dev:
     needs: docker
-    if: github.ref == 'refs/heads/feature/*'
+    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
     - run: echo code
   dev-test:
     needs: dev
-    if: github.ref == 'refs/heads/feature/*'
+    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
     - run: echo code
