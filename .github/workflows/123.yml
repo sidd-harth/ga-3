@@ -3,42 +3,42 @@ on:
 
 jobs:
   unit:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo test
   code:
     needs: unit
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo code
   docker:
     needs: code
     if: github.ref == 'refs/heads/feature/*'
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo code
   dev:
     needs: docker
     if: github.ref == 'refs/heads/feature/*'
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo code
   dev-test:
     needs: dev
     if: github.ref == 'refs/heads/feature/*'
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo code
   prod:
     needs: code
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo code
   prod-test:
     needs: prod
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo code
     
