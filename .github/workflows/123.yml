@@ -5,7 +5,7 @@ jobs:
   unit:
     runs-on: ubuntu-latest
     steps:
-    - run: echo test
+    - run: echo test1
   code:
     needs: unit
     runs-on: ubuntu-latest
